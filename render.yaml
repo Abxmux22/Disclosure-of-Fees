@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: disclosure-of-fees-calculator
+    runtime: python
+    buildCommand: ""
+    startCommand: python server.py
+    healthCheckPath: /health

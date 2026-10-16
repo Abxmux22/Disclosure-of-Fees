@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive real estate disclosure of fees calculator." />
+  <title>Disclosure of Fees Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=2" />
+</head>
+<body>
+  <main class="layout">
+    <section class="card">
+      <header class="main-head">
+        <h1>Disclosure of Fees</h1>
+        <p class="intro">Enter the general partner fees to calculate the total fee disclosure.</p>
+      </header>
+
+      <section class="subsection details-section">
+        <h2>Your Details</h2>
+        <div class="field-grid">
+          <label>
+            Full Name
+            <input id="fullName" type="text" placeholder="John Doe" autocomplete="name" />
+          </label>
+          <label>
+            Email Address
+            <input id="email" type="email" placeholder="john@email.com" autocomplete="email" />
+          </label>
+        </div>
+      </section>
+
+      <section class="subsection">
+        <h2>Fee Analysis</h2>
+        <p class="section-note">Enter the fee amounts and project term. The annual asset management fee is multiplied by the project term.</p>
+        <div class="table-wrap">
+          <table class="analysis-table fees-table">
+            <thead>
+              <tr>
+                <th scope="col">Fee</th>
+                <th scope="col">Fee Amount</th>
+                <th scope="col"># Years of<br />Project</th>
+                <th scope="col">Total Fee</th>
+              </tr>
+            </thead>
+            <tbody id="feesBody"></tbody>
+            <tfoot>
+              <tr class="totals-row">
+                <th colspan="3" scope="row">Total Fee to General Partners</th>
+                <td id="totalFees">$0</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <section class="summary-card" aria-live="polite">
+        <h2>Summary</h2>
+        <div class="summary-grid">
+          <div>
+            <p>One-Time Fees</p>
+            <strong id="summaryOneTime">$0</strong>
+          </div>
+          <div>
+            <p>Asset Management Fee</p>
+            <strong id="summaryAnnual">$0</strong>
+          </div>
+          <div class="summary-total">
+            <p>Total Fee to General Partners</p>
+            <strong id="summaryTotal">$0</strong>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="downloadPdf" type="button">Download PDF</button>
+          <p id="downloadStatus" role="status"></p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="./app.js?v=5"></script>
+</body>
+</html>
